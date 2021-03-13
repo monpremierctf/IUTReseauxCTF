@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    /*
+    height: 100vh;
+    */
+    justify-content: center;
+    align-items: center;
+    font-family: Lato, sans-serif;
+    
+    background: url("img/background-photomelia-soap.jpg") 0 / cover fixed;
+    
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0.4px 0.6px rgba(0, 0, 0, 0.141), 0 1px 1.3px rgba(0, 0, 0, 0.202), 0 1.9px 2.5px rgba(0, 0, 0, 0.25), 0 3.4px 4.5px rgba(0, 0, 0, 0.298), 0 6.3px 8.4px rgba(0, 0, 0, 0.359), 0 15px 20px rgba(0, 0, 0, 0.5);
+}
+
+.panel {
+    border: 0;
+    margin-bottom: 15px;
+    background-color: #30363c;
+    color: #88939C;
+    width: 80%;
+  }
+  .panel > .panel-heading {
+    border: 0;
+    padding: 11px 20px 9px;
+    background-color: rgba(36, 41, 44, 0.5);
+    border-bottom: 2px solid #5e6870;
+  }
+  .panel-title {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .panel-div {
+    padding: 7px 20px;
+    border-bottom: 1px solid #353c42;
+    background-color: transparent;
+  }
+  .panel-body {
+    padding: 7px 20px;
+    border-bottom: 1px solid #353c42;
+  }
+  .panel-body:last-child {
+    border-bottom: 0;
+    padding-bottom: 15px;
+  }
+
+  .cmd-title {
+    text-decoration: underline;
+    color: grey;
+  }
+  .form-control {
+    border: 0;
+    margin-bottom: 15px;
+    background-color: #3f474e;
+    color: #88939C;
+  }
+
+  .sql-cmd-input {
+    width: 80%;
+  }
+
+  .sql-grow {
+    flex-grow: 1;
+  }
+  input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: .5px; 
+}

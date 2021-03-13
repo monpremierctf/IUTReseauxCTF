@@ -1,0 +1,123 @@
+debug = false
+
+logLevel = "INFO"
+defaultEntryPoints = ["https","http"]
+
+[accessLog]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+
+  [entryPoints.https]
+  address = ":443"
+  [entryPoints.https.tls]
+
+[retry]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+#domain = "yoloctf.org"
+watch = true
+exposedByDefault = false
+
+[acme]
+email = "admin@hacklab.yoloctf.org"
+storage = "acme.json"
+entryPoint = "https"
+#onHostRule = true
+#caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+caServer = "https://acme-v02.api.letsencrypt.org/directory"
+acmeLogging = true
+
+[acme.httpChallenge]
+entryPoint = "http"
+
+[[acme.domains]]
+main = "hacklab.yoloctf.org"
+#sans = ["lab01.hacklab.yoloctf.org", "lab02.hacklab.yoloctf.org", "lab03.hacklab.yoloctf.org"]
+
+[[acme.domains]]
+main = "pad.yoloctf.org"
+
+[[acme.domains]]
+main = "hacklab01.yoloctf.org"
+
+[[acme.domains]]
+main = "hacklab02.yoloctf.org"
+
+[[acme.domains]]
+main = "ether.yoloctf.org"
+
+[[acme.domains]]
+main = "gui02.yoloctf.org"
+
+[[acme.domains]]
+main = "hacklab03.yoloctf.org"
+
+
+[[acme.domains]]
+main = "gui03.yoloctf.org"
+
+[file]
+
+[backends]
+  [backends.backend_ctf_monitor]
+    [backends.backend_ctf_monitor.circuitbreaker]
+      expression = "NetworkErrorRatio() > 0.5"
+    [backends.backend_ctf_monitor.servers.server1]
+    url = "http://172.27.0.1:7000"
+    
+  [backends.backend_hacklab01]
+    [backends.backend_hacklab01.servers.server1]
+    url = "http://192.168.1.51:80"
+    
+  [backends.backend_hacklab02]
+    [backends.backend_hacklab02.servers.server1]
+    url = "http://192.168.1.38:80"
+    
+  [backends.backend_gui02]
+    [backends.backend_gui02.servers.server1]
+    url = "http://yop-server2:8080"    
+    
+  [backends.backend_hacklab03]
+    [backends.backend_hacklab03.servers.server1]
+    url = "http://192.168.1.53:80"
+
+  [backends.backend_gui03]
+    [backends.backend_gui03.servers.server1]
+    url = "http://yop-server3:8080"  
+
+
+[frontends]
+  [frontends.frontend_ctf_monitor]
+  backend = "backend_ctf_monitor"
+    [frontends.frontend_ctf_monitor.routes.main]
+    rule = "PathPrefix:/stats/;ReplacePathRegex: ^/stats/(.*) /$1"
+    
+  [frontends.frontend_hacklab01]
+  backend = "backend_hacklab01"
+    [frontends.frontend_hacklab01.routes.main]
+    rule = "Host: hacklab01.yoloctf.org, lab01.hacklab.yoloctf.org"	
+    
+  [frontends.frontend_hacklab02]
+  backend = "backend_hacklab02"
+    [frontends.frontend_hacklab02.routes.main]
+    rule = "Host: hacklab02.yoloctf.org, lab02.hacklab.yoloctf.org"	
+
+  [frontends.frontend_gui02]
+  backend = "backend_gui02"
+    [frontends.frontend_gui02.routes.main]
+    rule = "Host: gui02.yoloctf.org"	
+    
+  [frontends.frontend_hacklab03]
+  backend = "backend_hacklab03"
+    [frontends.frontend_hacklab03.routes.main]
+    rule = "Host: hacklab03.yoloctf.org, lab03.hacklab.yoloctf.org"		
+	
+  [frontends.frontend_gui03]
+  backend = "backend_gui03"
+    [frontends.frontend_gui03.routes.main]
+    rule = "Host: gui03.yoloctf.org"	

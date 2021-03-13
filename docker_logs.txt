@@ -1,0 +1,43 @@
+# Docker logs files 
+#
+
+# https://docs.docker.com/config/containers/logging/configure/#configure-the-logging-driver-for-a-container
+
+# For all containers
+$ cat /etc/docker/daemon.json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3"
+  },
+  "dns": ["8.8.8.8"]
+}
+
+$ service docker restart
+
+
+
+# docker
+docker run --log-opt max-size=10m --log-opt max-file=3 my-app:latest
+
+
+# docker-compose
+my-app:
+    image: my-app:latest
+    logging:
+        driver: "json-file"
+        options:
+            max-file: 3
+            max-size: 10m
+
+
+
+# logs files location
+$ docker inspect -f '{{.LogPath}}' ctf-dvwa
+$ sudo ls -al /var/lib/docker/containers/3286326f64af6c24a10fa6d6b69145209a62fa273abd3f9b5c96eb2c8b71a878/3286326f64af6c24a10fa6d6b69145209a62fa273abd3f9b5c96eb2c8b71a878-json.log
+
+
+
+# Docker prune all
+docker system prune --all --volumes --force

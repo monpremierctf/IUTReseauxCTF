@@ -1,0 +1,4 @@
+. .env; 
+docker exec -i webserver_mysql mysql -u root -p$MYSQL_ROOT_PASSWORD dbctf < backup.sql
+
+# mysqlimport -u [uname] -p[pass] [dbname] [backupfile.sql]

@@ -1,0 +1,152 @@
+@font-face {
+    font-family: Prisma;
+    src: url("Prisma.otf") format("opentype");
+}
+
+.menu_1 {
+    white-space: pre;
+    background-color: #ddd;
+    margin-bottom: 0rem;
+    color: #212529;
+    text-align: left;
+    padding-left: 14px;
+}
+
+.menu_1::before {
+    content: "> ";
+}
+
+.menu_1:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu_2 {
+    white-space: pre;
+    background-color: #eee;
+    margin-bottom: 0rem;
+    color: #212529;
+    text-align: left;
+    padding-left: 14px;
+}
+
+.menu_2_href:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu_tools {
+    white-space: pre;
+    background-color: #ddd;
+    margin-bottom: 0rem;
+    color: #212529;
+    text-align: left;
+    padding-left: 14px;
+}
+
+.menu_tools::before {
+    content: "";
+}
+
+.menu_tools:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+pre{
+    overflow: auto;
+    background: #ddd;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    white-space: pre;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -ms-pre-wrap;
+}
+
+
+.ctf-chall-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+.ctf-background {
+    padding: 1rem 0.5rem;
+    padding-top: 1rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.5rem;
+    background-color: #e9ecef;
+}
+
+
+.ctf-title {
+    font-family: Prisma;
+    padding: 1rem 0.5rem;
+}
+
+.ctf-subtitle {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    padding: 1rem 0.5rem;
+}
+
+.ctf-title-size {
+    font-size: 5rem;
+    color: rgb(94, 90, 16);
+}
+
+.ctf-menu-color {
+    color: rgb(94, 90, 16);
+}
+.ctf-submenu-color {
+    color: rgb(94, 90, 16);
+}
+.ctf-submenu-size {
+    font-size: 0.6rem;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+.ctf-toc-backcolor {
+    background-color: rgb(221, 216, 214);
+}
+
+.ctf-subtitle-size {
+    font-size: 1.5rem
+}
+.chall-titre {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.chall-desc {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.chall-desc {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.chall-spacer {
+    margin-top: 5rem !important;
+
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem !important;
+}
+h4 {
+    font-size: 1.0rem;
+    margin-top: 2rem !important;
+}
+h5 {
+    font-size: 0.5rem;
+    margin-top: 2rem !important;
+}

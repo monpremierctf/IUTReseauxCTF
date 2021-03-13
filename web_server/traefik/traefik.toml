@@ -1,0 +1,51 @@
+debug = false
+
+logLevel = "INFO"
+defaultEntryPoints = ["https","http"]
+
+[accessLog]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+
+  [entryPoints.https]
+  address = ":443"
+
+  [entryPoints.https.tls]
+    [[entryPoints.https.tls.certificates]]
+      certFile = "/certs/yolo.crt"
+      keyFile = "/certs/yolo.key"
+
+  [entryPoints.traefik]
+  address = ":8000"
+
+[api]
+entryPoint = "traefik"
+dashboard = true
+
+[retry]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+#domain = "docker.localhost"
+watch = true
+exposedByDefault = false
+
+[file]
+
+[backends]
+  [backends.backend_ctf_monitor]
+    [backends.backend_ctf_monitor.circuitbreaker]
+      expression = "NetworkErrorRatio() > 0.5"
+    [backends.backend_ctf_monitor.servers.server1]
+    url = "http://12.0.0.15:7000"
+
+
+[frontends]
+  [frontends.frontend_ctf_monitor]
+  backend = "backend_ctf_monitor"
+    [frontends.frontend_ctf_monitor.routes.main]
+    rule = "PathPrefix:/stats/;ReplacePathRegex: ^/stats/(.*) /$1"

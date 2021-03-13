@@ -1,0 +1,57 @@
+#
+# L'adresse IP du serveur sur lequel tourne les challenges est entre []
+# Cette IP sera insérée dans le texte de description des challenges
+# Un répertoire de challenges par ligne
+# Commentaires avec #
+# 
+#
+
+[IPSERVER]
+ctf-intro/ctf-flag
+ctf-intro/ctf-xterm
+ctf-intro/ctf-firstbox
+
+# Bases
+ctf-training/ctf-passwd
+ctf-training/ctf-decode
+ctf-training/ctf-shell
+ctf-training/ctf-http
+ctf-training/ctf-transfert
+
+# Web
+ctf-training/ctf-lfi
+ctf-training/ctf-sqli
+ctf-training/ctf-train-sqli
+ctf-training/ctf-fileupload
+
+# Net
+ctf-training/ctf-net
+
+# Priv esc
+ctf-training/ctf-escalation
+ctf-training/ctf-buffer
+ctf-training/ctf-buffer2
+#ctf-training/ctf-buffer-win
+
+# Eval
+ctf-training/ctf-eval01
+
+# Crypto
+ctf-training/ctf-crypto-aes
+ctf-training/ctf-crypto-rsa
+
+ctf-vulns/ctf-exploit
+#ctf-vulns/ctf-dirtycow
+#ctf-vulns/ctf-heartbleed
+#ctf-vulns/ctf-shellshock
+
+#ctf-challs/ctf-web
+
+#ctf-boxes/ctf-pingomatic
+#ctf-boxes/ctf-mutillidae
+#ctf-boxes/ctf-dvwa
+ctf-boxes/ctf-dc1
+ctf-boxes/ctf-dc4
+ctf-boxes/ctf-pwnlab
+ctf-boxes/ctf-fristileaks
+ctf-boxes/ctf-linsecurity

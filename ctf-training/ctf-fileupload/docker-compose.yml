@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  ctf-fileupload:
+    build: .
+    image: ctf-fileupload
+    container_name: ctf-fileupload
+    networks:
+      - traefik_challsLAN
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=PathPrefix:/ctf-fileupload/;ReplacePathRegex: ^/ctf-fileupload/(.*) /$$1"
+      - "traefik.port=8080"
+      - "traefik.docker.network=traefik_challsLAN"
+    volumes:
+      - ./www_site:/var/www/html/
+
+networks:
+  traefik_challsLAN:
+    external: true
+

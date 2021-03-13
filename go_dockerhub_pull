@@ -1,0 +1,26 @@
+#!/bin/bash 
+#
+# Pull images to dockerhub
+#
+
+echo " "
+echo " --------------------------------------------------------------------"
+echo "|"
+echo "| Pull Images from Docker hub"
+echo "|"
+
+
+
+#
+# Docker images
+#
+CTFTOOLS="ctf-sshd ctf-php-nginx ctf-php-nginx-ssh ctf-python-editor ctf-proxy ctf-mitmweb ctf-sshxterm"
+IMAGESTOOLS="ctf-tool-xterm ctf-proxy ctf-mitmweb ctf-python-editor challenge-box-provider"
+IMAGESCHALLS="ctf-shell ctf-escalation ctf-transfert ctf-exploit ctf-tcpserver ctf-telnet ctf-ftp ctf-smtp ctf-fileupload ctf-lfi ctf-aes-bruteforce ctf-heartbleed ctf-shellshock ctf-demo" 
+IMAGESCHALLS2="ctf-sqli ctf-buffer ctf-mutillidae ctf-dvwa ctf-chall-web ctf-train-sqli" 
+
+
+for IMG in $IMAGESTOOLS $IMAGESCHALLS; do
+  echo "[+] Pull $IMG"
+  docker pull yoloctf/$IMG:v1.0
+done

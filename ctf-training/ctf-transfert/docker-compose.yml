@@ -1,0 +1,10 @@
+#
+#
+version: "3"
+
+services:
+  ctf-transfert:
+    build: . 
+    image: ctf-transfert
+    #ports:
+    #  - 22
