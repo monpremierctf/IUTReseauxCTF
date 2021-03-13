@@ -668,6 +668,7 @@ ctf_clone_hackers_guide() {
   git clone https://github.com/jossets/YoloHackersGuide.git
   cp docker-compose.hackersguide.yml YoloHackersGuide/docker-compose.yml
   cd YoloHackersGuide
+  cp env.default .env
   docker-compose up -d 
   cd .. 2>/dev/null
 }
