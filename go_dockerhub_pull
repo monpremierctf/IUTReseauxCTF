@@ -23,3 +23,8 @@ for IMG in $IMAGESTOOLS $IMAGESCHALLS; do
   echo "[+] Pull $IMG"
   docker pull yoloctf/$IMG:v1.0
 done
+
+for IMG in $IMAGESTOOLS $IMAGESCHALLS; do
+  echo "[+] Tagging $IMG"
+  docker tag yoloctf/$IMG:v1.0 $IMG
+done
