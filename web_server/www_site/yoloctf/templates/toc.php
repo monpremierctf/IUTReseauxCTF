@@ -93,12 +93,12 @@
             // Admin tools
             if (isset($_SESSION['login'] )) {
                 if (($_SESSION['login']==$admin  )) {
-                    print '<a href="index.php?p=Infra"><pre class="menu_tools ctf-menu-color">[Infra]</pre></a> ';
-                    print '<a href="index.php?p=Monitor"><pre class="menu_tools ctf-menu-color">[Monitor]</pre></a> ';
+                    //print '<a href="index.php?p=Infra"><pre class="menu_tools ctf-menu-color">[Infra]</pre></a> ';
+                    //print '<a href="index.php?p=Monitor"><pre class="menu_tools ctf-menu-color">[Monitor]</pre></a> ';
                     print '<a href="index.php?p=Zen"><pre class="menu_tools ctf-menu-color">[Admin]</pre></a> ';
                     print '<a href="index.php?p=AdminLog"><pre class="menu_tools ctf-menu-color">[Logs]</pre></a> ';
-                    print '<a href="index.php?p=ChallServers"><pre class="menu_tools ctf-menu-color">[Chall Servers]</pre></a> ';
-                    print '<a href="index.php?p=Editor"     target="_blank"><pre class="menu_tools ctf-menu-color">[Editeur]</pre></a> ';
+                    //print '<a href="index.php?p=ChallServers"><pre class="menu_tools ctf-menu-color">[Chall Servers]</pre></a> ';
+                    //print '<a href="index.php?p=Editor"     target="_blank"><pre class="menu_tools ctf-menu-color">[Editeur]</pre></a> ';
                 }
             }
             ?>
