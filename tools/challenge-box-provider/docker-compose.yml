@@ -6,7 +6,7 @@ version: '2'
 
 services:
   challenge-box-provider:
-    #image: ubuntu:latest
+    image: challenge-box-provider
     build: ./ 
     container_name: challenge-box-provider
     #ports:
